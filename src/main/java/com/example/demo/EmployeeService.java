@@ -11,7 +11,7 @@ import data.EmployeeData;
 import dto.Employee;
 
 
-public class CompletableAsyncExampleApplication {
+public class EmployeeService {
 	
 	public List<Employee> getEmployees() throws InterruptedException, ExecutionException
 	{
@@ -36,8 +36,8 @@ public class CompletableAsyncExampleApplication {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		 
-		CompletableAsyncExampleApplication supplyAsyn = new CompletableAsyncExampleApplication();
-		List<Employee> employees = supplyAsyn.getEmployees();
+		EmployeeService service = new EmployeeService();
+		List<Employee> employees = service.getEmployees();
 		System.out.println("Final List Size = "+ employees.size());
 		employees.stream().forEach(obj -> System.out.println(obj.getId()+"-"+obj.getName()));
 		
